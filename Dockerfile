@@ -11,3 +11,8 @@ RUN yum install -y google-chrome-stable
 RUN curl -sL https://rpm.nodesource.com/setup_12.x | bash -
 RUN yum -y install nodejs
 RUN yum -y install gcc-c++ make
+RUN yum -y install unzip
+RUN wget https://chromedriver.storage.googleapis.com/86.0.4240.22/chromedriver_linux64.zip
+RUN unzip chromedriver_linux64.zip
+RUN mv chromedriver /usr/local/bin/
+RUN chmod +x /usr/local/bin/chromedriver
